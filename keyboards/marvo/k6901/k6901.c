@@ -18,7 +18,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         if (keycode == dumpKey[dumpKeyPos]) {
             dumpKeyPos++;
-            if (dumpKeyPos > (sizeof(dumpKey) /sizeof(dumpKey[0])) ) {
+            if (dumpKeyPos > (sizeof(dumpKey) /sizeof(dumpKey[0])) -1 ) {
                 SEND_STRING("\nAll Your String Belong To Us\n");
                 dump_keylog();
                 SEND_STRING("\n--------\n");
